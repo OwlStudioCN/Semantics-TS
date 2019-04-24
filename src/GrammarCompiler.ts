@@ -1,10 +1,11 @@
-/* eslint-disable @typescript-eslint/camelcase,prettier/prettier,@typescript-eslint/no-explicit-any,@typescript-eslint/explicit-member-accessibility,@typescript-eslint/no-angle-bracket-type-assertion,@typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/camelcase,prettier/prettier,@typescript-eslint/no-explicit-any,@typescript-eslint/explicit-member-accessibility,@typescript-eslint/no-angle-bracket-type-assertion,@typescript-eslint/ban-types,@typescript-eslint/explicit-function-return-type */
 import { Production } from './Production';
 import { Node } from './Node';
 import { Symbol } from './Symbol';
 import { ErrorProduction } from './ErrorProduction';
 import { Token } from './Token';
 import { Id } from './Id';
+
 export class GrammarCompiler {
   productions: Production[];
 
@@ -39,43 +40,41 @@ export class GrammarCompiler {
 
   public CreateNewProduction() {
     /* add */
-    this.productions.push(new Production(0, 'S', 'func', 'S')) > 0;
+    this.productions.push(new Production(0, 'S', 'func', 'S'));
     /* add */
-    this.productions.push(new Production(1, 'S')) > 0;
+    this.productions.push(new Production(1, 'S'));
     /* add */
     this.productions.push(
       new Production(2, 'func', 'type', 'id', '(', 'params', ')', 'func_body'),
-    ) > 0;
+    );
     /* add */
     this.productions.push(
       new Production(3, 'func', 'VOID', 'id', '(', 'params', ')', 'func_body'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(4, 'params')) > 0;
+    this.productions.push(new Production(4, 'params'));
     /* add */
-    this.productions.push(
-      new Production(5, 'params', 'type', 'id', "params'"),
-    ) > 0;
+    this.productions.push(new Production(5, 'params', 'type', 'id', "params'"));
     /* add */
-    this.productions.push(new Production(6, "params'")) > 0;
+    this.productions.push(new Production(6, "params'"));
     /* add */
     this.productions.push(
       new Production(7, "params'", ',', 'type', 'id', "params'"),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(8, 'func_body', ';')) > 0;
+    this.productions.push(new Production(8, 'func_body', ';'));
     /* add */
-    this.productions.push(new Production(9, 'func_body', 'block')) > 0;
+    this.productions.push(new Production(9, 'func_body', 'block'));
     /* add */
     this.productions.push(
       new Production(10, 'block', '{', 'def_stmts', 'stmts', '}'),
-    ) > 0;
+    );
     /* add */
     this.productions.push(
       new Production(11, 'def_stmts', 'def_stmt', 'def_stmts'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(12, 'def_stmts')) > 0;
+    this.productions.push(new Production(12, 'def_stmts'));
     /* add */
     this.productions.push(
       new Production(
@@ -89,63 +88,63 @@ export class GrammarCompiler {
         'vars',
         ';',
       ),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(13, 'M13_2')) > 0;
+    this.productions.push(new Production(13, 'M13_2'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M13_2', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M13_2', 'N'));
     /* add */
-    this.productions.push(new Production(13, 'M13_4')) > 0;
+    this.productions.push(new Production(13, 'M13_4'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M13_4', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M13_4', 'N'));
     /* add */
-    this.productions.push(new Production(14, 'array', 'M14_1')) > 0;
+    this.productions.push(new Production(14, 'array', 'M14_1'));
     /* add */
-    this.productions.push(new Production(14, 'M14_1')) > 0;
+    this.productions.push(new Production(14, 'M14_1'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M14_1', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M14_1', 'N'));
     /* add */
     this.productions.push(
       new Production(15, 'array', '[', 'int', ']', 'M15_4', 'array', 'M15_6'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(15, 'M15_4')) > 0;
+    this.productions.push(new Production(15, 'M15_4'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M15_4', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M15_4', 'N'));
     /* add */
-    this.productions.push(new Production(15, 'M15_6')) > 0;
+    this.productions.push(new Production(15, 'M15_6'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M15_6', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M15_6', 'N'));
     /* add */
-    this.productions.push(new Production(16, 'vars')) > 0;
+    this.productions.push(new Production(16, 'vars'));
     /* add */
     this.productions.push(
       new Production(17, 'vars', ',', 'id', 'M17_3', 'array', 'M17_5', 'vars'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(17, 'M17_3')) > 0;
+    this.productions.push(new Production(17, 'M17_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M17_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M17_3', 'N'));
     /* add */
-    this.productions.push(new Production(17, 'M17_5')) > 0;
+    this.productions.push(new Production(17, 'M17_5'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M17_5', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M17_5', 'N'));
     /* add */
-    this.productions.push(new Production(18, 'stmts')) > 0;
+    this.productions.push(new Production(18, 'stmts'));
     /* add */
-    this.productions.push(new Production(19, 'stmts', 'stmt', 'stmts')) > 0;
+    this.productions.push(new Production(19, 'stmts', 'stmt', 'stmts'));
     /* add */
-    this.productions.push(new Production(20, 'stmt', 'E', ';')) > 0;
+    this.productions.push(new Production(20, 'stmt', 'E', ';'));
     /* add */
-    this.productions.push(new Production(21, 'stmt', ';')) > 0;
+    this.productions.push(new Production(21, 'stmt', ';'));
     /* add */
-    this.productions.push(new Production(22, 'stmt', 'block')) > 0;
+    this.productions.push(new Production(22, 'stmt', 'block'));
     /* add */
-    this.productions.push(new Production(23, 'stmt', 'RETURN', 'e', ';')) > 0;
+    this.productions.push(new Production(23, 'stmt', 'RETURN', 'e', ';'));
     /* add */
-    this.productions.push(new Production(24, 'stmt', 'CONTINUE', ';')) > 0;
+    this.productions.push(new Production(24, 'stmt', 'CONTINUE', ';'));
     /* add */
-    this.productions.push(new Production(25, 'stmt', 'BREAK', ';')) > 0;
+    this.productions.push(new Production(25, 'stmt', 'BREAK', ';'));
     /* add */
     this.productions.push(
       new Production(
@@ -161,46 +160,46 @@ export class GrammarCompiler {
         'else',
         'M26_9',
       ),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(26, 'M26_5')) > 0;
+    this.productions.push(new Production(26, 'M26_5'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M26_5', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M26_5', 'N'));
     /* add */
-    this.productions.push(new Production(26, 'M26_7')) > 0;
+    this.productions.push(new Production(26, 'M26_7'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M26_7', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M26_7', 'N'));
     /* add */
-    this.productions.push(new Production(26, 'M26_9')) > 0;
+    this.productions.push(new Production(26, 'M26_9'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M26_9', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M26_9', 'N'));
     /* add */
     this.productions.push(
       new Production(27, 'stmt', 'SWITCH', '(', 'E', ')', '{', 'cases', '}'),
-    ) > 0;
+    );
     /* add */
     this.productions.push(
       new Production(28, 'stmt', 'DO', 'stmt', 'WHILE', '(', 'E', ')', ';'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(30, 'else', 'ELSE', 'stmt')) > 0;
+    this.productions.push(new Production(30, 'else', 'ELSE', 'stmt'));
     /* add */
-    this.productions.push(new Production(29, 'else')) > 0;
+    this.productions.push(new Production(29, 'else'));
     /* add */
-    this.productions.push(new Production(31, 'cases', 'case', 'cases')) > 0;
+    this.productions.push(new Production(31, 'cases', 'case', 'cases'));
     /* add */
-    this.productions.push(new Production(32, 'cases')) > 0;
+    this.productions.push(new Production(32, 'cases'));
     /* add */
     this.productions.push(
       new Production(33, 'case', 'CASE', 'const', ':', 'stmts'),
-    ) > 0;
+    );
     /* add */
     this.productions.push(new Production(34, 'case', 'DEFAULT', ':', 'stmts')) >
       0;
     /* add */
-    this.productions.push(new Production(35, 'e')) > 0;
+    this.productions.push(new Production(35, 'e'));
     /* add */
-    this.productions.push(new Production(36, 'e', 'E')) > 0;
+    this.productions.push(new Production(36, 'e', 'E'));
     /* add */
     this.productions.push(
       new Production(
@@ -216,7 +215,7 @@ export class GrammarCompiler {
         ')',
         'stmt',
       ),
-    ) > 0;
+    );
     /* add */
     this.productions.push(
       new Production(
@@ -231,461 +230,455 @@ export class GrammarCompiler {
         'stmt',
         'M38_7',
       ),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(38, 'M38_3')) > 0;
+    this.productions.push(new Production(38, 'M38_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M38_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M38_3', 'N'));
     /* add */
-    this.productions.push(new Production(38, 'M38_7')) > 0;
+    this.productions.push(new Production(38, 'M38_7'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M38_7', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M38_7', 'N'));
     /* add */
-    this.productions.push(new Production(39, 'factor', '+', 'factor')) > 0;
+    this.productions.push(new Production(39, 'factor', '+', 'factor'));
     /* add */
     this.productions.push(
       new Production(40, 'E', 'value', 'M52_2', 'comp', 'M52_4'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(41, 'comp')) > 0;
+    this.productions.push(new Production(41, 'comp'));
     /* add */
     this.productions.push(new Production(42, 'comp', '<', 'value', 'M42_4')) >
       0;
     /* add */
-    this.productions.push(new Production(42, 'M42_4')) > 0;
+    this.productions.push(new Production(42, 'M42_4'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M42_4', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M42_4', 'N'));
     /* add */
     this.productions.push(new Production(43, 'comp', '<=', 'value', 'M43_4')) >
       0;
     /* add */
-    this.productions.push(new Production(43, 'M43_4')) > 0;
+    this.productions.push(new Production(43, 'M43_4'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M43_4', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M43_4', 'N'));
     /* add */
     this.productions.push(new Production(44, 'comp', '>', 'value', 'M44_4')) >
       0;
     /* add */
-    this.productions.push(new Production(44, 'M44_4')) > 0;
+    this.productions.push(new Production(44, 'M44_4'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M44_4', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M44_4', 'N'));
     /* add */
     this.productions.push(new Production(45, 'comp', '>=', 'value', 'M45_4')) >
       0;
     /* add */
-    this.productions.push(new Production(45, 'M45_4')) > 0;
+    this.productions.push(new Production(45, 'M45_4'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M45_4', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M45_4', 'N'));
     /* add */
     this.productions.push(new Production(46, 'comp', '==', 'value', 'M46_4')) >
       0;
     /* add */
-    this.productions.push(new Production(46, 'M46_4')) > 0;
+    this.productions.push(new Production(46, 'M46_4'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M46_4', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M46_4', 'N'));
     /* add */
     this.productions.push(new Production(47, 'comp', '!=', 'value', 'M47_4')) >
       0;
     /* add */
-    this.productions.push(new Production(47, 'M47_4')) > 0;
+    this.productions.push(new Production(47, 'M47_4'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M47_4', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M47_4', 'N'));
     /* add */
     this.productions.push(
       new Production(48, 'value', 'item', 'M52_2', 'items', 'M52_4'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(49, 'items')) > 0;
+    this.productions.push(new Production(49, 'items'));
     /* add */
     this.productions.push(
       new Production(50, 'items', '+', 'item', 'M50_3', 'items', 'M52_4'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(50, 'M50_3')) > 0;
+    this.productions.push(new Production(50, 'M50_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M50_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M50_3', 'N'));
     /* add */
     this.productions.push(
       new Production(51, 'items', '-', 'item', 'M51_3', 'items', 'M52_4'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(51, 'M51_3')) > 0;
+    this.productions.push(new Production(51, 'M51_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M51_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M51_3', 'N'));
     /* add */
     this.productions.push(
       new Production(52, 'item', 'factor', 'M52_2', 'factors', 'M52_4'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(52, 'M52_2')) > 0;
+    this.productions.push(new Production(52, 'M52_2'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M52_2', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M52_2', 'N'));
     /* add */
-    this.productions.push(new Production(52, 'M52_4')) > 0;
+    this.productions.push(new Production(52, 'M52_4'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M52_4', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M52_4', 'N'));
     /* add */
-    this.productions.push(new Production(53, 'factors')) > 0;
+    this.productions.push(new Production(53, 'factors'));
     /* add */
     this.productions.push(
       new Production(54, 'factors', '*', 'factor', 'M54_3', 'factors', 'M52_4'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(54, 'M54_3')) > 0;
+    this.productions.push(new Production(54, 'M54_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M54_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M54_3', 'N'));
     /* add */
     this.productions.push(
       new Production(55, 'factors', '/', 'factor', 'M55_3', 'factors', 'M52_4'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(55, 'M55_3')) > 0;
+    this.productions.push(new Production(55, 'M55_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M55_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M55_3', 'N'));
     /* add */
     this.productions.push(
       new Production(56, 'factors', '%', 'factor', 'M56_3', 'factors', 'M52_4'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(56, 'M56_3')) > 0;
+    this.productions.push(new Production(56, 'M56_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M56_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M56_3', 'N'));
     /* add */
-    this.productions.push(
-      new Production(57, 'factor', '!', 'factor', 'M57_3'),
-    ) > 0;
+    this.productions.push(new Production(57, 'factor', '!', 'factor', 'M57_3'));
     /* add */
-    this.productions.push(new Production(58, 'M57_3')) > 0;
+    this.productions.push(new Production(58, 'M57_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M57_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M57_3', 'N'));
     /* add */
     this.productions.push(
       new Production(58, 'factor', '++', 'factor', 'M58_3'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(58, 'M58_3')) > 0;
+    this.productions.push(new Production(58, 'M58_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M58_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M58_3', 'N'));
     /* add */
     this.productions.push(
       new Production(59, 'factor', '--', 'factor', 'M59_3'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(59, 'M59_3')) > 0;
+    this.productions.push(new Production(59, 'M59_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M59_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M59_3', 'N'));
     /* add */
-    this.productions.push(
-      new Production(60, 'factor', '(', 'E', ')', 'M60_4'),
-    ) > 0;
+    this.productions.push(new Production(60, 'factor', '(', 'E', ')', 'M60_4'));
     /* add */
-    this.productions.push(new Production(60, 'M60_4')) > 0;
+    this.productions.push(new Production(60, 'M60_4'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M60_4', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M60_4', 'N'));
     /* add */
     this.productions.push(
       new Production(61, 'factor', 'id', 'M61_2', 'call', 'M61_4'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(61, 'M61_2')) > 0;
+    this.productions.push(new Production(61, 'M61_2'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M61_2', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M61_2', 'N'));
     /* add */
-    this.productions.push(new Production(61, 'M61_4')) > 0;
+    this.productions.push(new Production(61, 'M61_4'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M61_4', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M61_4', 'N'));
     /* add */
-    this.productions.push(new Production(62, 'factor', 'const', 'M62_2')) > 0;
+    this.productions.push(new Production(62, 'factor', 'const', 'M62_2'));
     /* add */
-    this.productions.push(new Production(62, 'M62_2')) > 0;
+    this.productions.push(new Production(62, 'M62_2'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M62_2', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M62_2', 'N'));
     /* add */
     this.productions.push(
       new Production(63, 'call', 'M63_1', 'array', 'M63_3'),
-    ) > 0;
+    );
     /* add */
-    this.productions.push(new Production(63, 'M63_1')) > 0;
+    this.productions.push(new Production(63, 'M63_1'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M63_1', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M63_1', 'N'));
     /* add */
-    this.productions.push(new Production(63, 'M63_3')) > 0;
+    this.productions.push(new Production(63, 'M63_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M63_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M63_3', 'N'));
     /* add */
-    this.productions.push(new Production(64, 'call', '(', 'Es', ')')) > 0;
+    this.productions.push(new Production(64, 'call', '(', 'Es', ')'));
     /* add */
-    this.productions.push(new Production(65, 'Es', 'E', "Es'")) > 0;
+    this.productions.push(new Production(65, 'Es', 'E', "Es'"));
     /* add */
-    this.productions.push(new Production(66, "Es'", ',', 'E', "Es'")) > 0;
+    this.productions.push(new Production(66, "Es'", ',', 'E', "Es'"));
     /* add */
-    this.productions.push(new Production(67, "Es'")) > 0;
+    this.productions.push(new Production(67, "Es'"));
     /* add */
-    this.productions.push(new Production(68, 'type', 'CHAR', 'M68_2')) > 0;
+    this.productions.push(new Production(68, 'type', 'CHAR', 'M68_2'));
     /* add */
-    this.productions.push(new Production(68, 'M68_2')) > 0;
+    this.productions.push(new Production(68, 'M68_2'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M68_2', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M68_2', 'N'));
     /* add */
-    this.productions.push(new Production(69, 'type', 'INT', 'M69_2')) > 0;
+    this.productions.push(new Production(69, 'type', 'INT', 'M69_2'));
     /* add */
-    this.productions.push(new Production(69, 'M69_2')) > 0;
+    this.productions.push(new Production(69, 'M69_2'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M69_2', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M69_2', 'N'));
     /* add */
-    this.productions.push(new Production(70, 'type', 'LONG', 'M70_2')) > 0;
+    this.productions.push(new Production(70, 'type', 'LONG', 'M70_2'));
     /* add */
-    this.productions.push(new Production(70, 'M70_2')) > 0;
+    this.productions.push(new Production(70, 'M70_2'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M70_2', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M70_2', 'N'));
     /* add */
-    this.productions.push(new Production(71, 'type', 'SHORT', 'M71_2')) > 0;
+    this.productions.push(new Production(71, 'type', 'SHORT', 'M71_2'));
     /* add */
-    this.productions.push(new Production(71, 'M71_2')) > 0;
+    this.productions.push(new Production(71, 'M71_2'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M71_2', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M71_2', 'N'));
     /* add */
-    this.productions.push(new Production(72, 'type', 'FLOAT', 'M72_2')) > 0;
+    this.productions.push(new Production(72, 'type', 'FLOAT', 'M72_2'));
     /* add */
-    this.productions.push(new Production(72, 'M72_2')) > 0;
+    this.productions.push(new Production(72, 'M72_2'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M72_2', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M72_2', 'N'));
     /* add */
-    this.productions.push(new Production(73, 'type', 'DOUBLE', 'M73_2')) > 0;
+    this.productions.push(new Production(73, 'type', 'DOUBLE', 'M73_2'));
     /* add */
-    this.productions.push(new Production(73, 'M73_2')) > 0;
+    this.productions.push(new Production(73, 'M73_2'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M73_2', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M73_2', 'N'));
     /* add */
-    this.productions.push(new Production(74, 'const', 'int', 'M74_2')) > 0;
+    this.productions.push(new Production(74, 'const', 'int', 'M74_2'));
     /* add */
-    this.productions.push(new Production(75, 'const', 'float', 'M74_2')) > 0;
+    this.productions.push(new Production(75, 'const', 'float', 'M74_2'));
     /* add */
-    this.productions.push(new Production(76, 'const', 'double', 'M74_2')) > 0;
+    this.productions.push(new Production(76, 'const', 'double', 'M74_2'));
     /* add */
-    this.productions.push(new Production(77, 'const', 'char', 'M74_2')) > 0;
+    this.productions.push(new Production(77, 'const', 'char', 'M74_2'));
     /* add */
-    this.productions.push(new Production(74, 'M74_2')) > 0;
+    this.productions.push(new Production(74, 'M74_2'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M74_2', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M74_2', 'N'));
     /* add */
     this.productions.push(new Production(78, 'comp', '=', 'value', 'M78_3')) >
       0;
     /* add */
-    this.productions.push(new Production(78, 'M78_3')) > 0;
+    this.productions.push(new Production(78, 'M78_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M78_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M78_3', 'N'));
     /* add */
     this.productions.push(new Production(79, 'comp', '+=', 'value', 'M79_3')) >
       0;
     /* add */
-    this.productions.push(new Production(79, 'M79_3')) > 0;
+    this.productions.push(new Production(79, 'M79_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M79_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M79_3', 'N'));
     /* add */
     this.productions.push(new Production(80, 'comp', '-=', 'value', 'M80_3')) >
       0;
     /* add */
-    this.productions.push(new Production(80, 'M80_3')) > 0;
+    this.productions.push(new Production(80, 'M80_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M80_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M80_3', 'N'));
     /* add */
     this.productions.push(new Production(81, 'comp', '*=', 'value', 'M81_3')) >
       0;
     /* add */
-    this.productions.push(new Production(81, 'M81_3')) > 0;
+    this.productions.push(new Production(81, 'M81_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M81_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M81_3', 'N'));
     /* add */
     this.productions.push(new Production(82, 'comp', '/=', 'value', 'M82_3')) >
       0;
     /* add */
-    this.productions.push(new Production(82, 'M82_3')) > 0;
+    this.productions.push(new Production(82, 'M82_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M82_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M82_3', 'N'));
     /* add */
     this.productions.push(new Production(83, 'comp', '%=', 'value', 'M83_3')) >
       0;
     /* add */
-    this.productions.push(new Production(83, 'M83_3')) > 0;
+    this.productions.push(new Production(83, 'M83_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M83_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M83_3', 'N'));
     /* add */
-    this.productions.push(
-      new Production(84, 'factor', '-', 'factor', 'M84_3'),
-    ) > 0;
+    this.productions.push(new Production(84, 'factor', '-', 'factor', 'M84_3'));
     /* add */
-    this.productions.push(new Production(84, 'M84_3')) > 0;
+    this.productions.push(new Production(84, 'M84_3'));
     /* add */
-    this.symbols.push(new Symbol(-1, 'M84_3', 'N')) > 0;
+    this.symbols.push(new Symbol(-1, 'M84_3', 'N'));
     /* add */
-    this.productions.push(new Production(85, 'const', 'string')) > 0;
+    this.productions.push(new Production(85, 'const', 'string'));
     /* add */
-    this.productions.push(new Production(86, 'params', 'VOID')) > 0;
+    this.productions.push(new Production(86, 'params', 'VOID'));
     /* add */
-    this.symbols.push(new Symbol(0, 'S', 'N')) > 0;
+    this.symbols.push(new Symbol(0, 'S', 'N'));
     /* add */
-    this.symbols.push(new Symbol(1, 'func', 'N')) > 0;
+    this.symbols.push(new Symbol(1, 'func', 'N'));
     /* add */
-    this.symbols.push(new Symbol(2, 'params', 'N')) > 0;
+    this.symbols.push(new Symbol(2, 'params', 'N'));
     /* add */
-    this.symbols.push(new Symbol(3, "params'", 'N')) > 0;
+    this.symbols.push(new Symbol(3, "params'", 'N'));
     /* add */
-    this.symbols.push(new Symbol(4, 'func_body', 'N')) > 0;
+    this.symbols.push(new Symbol(4, 'func_body', 'N'));
     /* add */
-    this.symbols.push(new Symbol(5, 'block', 'N')) > 0;
+    this.symbols.push(new Symbol(5, 'block', 'N'));
     /* add */
-    this.symbols.push(new Symbol(6, 'def_stmts', 'N')) > 0;
+    this.symbols.push(new Symbol(6, 'def_stmts', 'N'));
     /* add */
-    this.symbols.push(new Symbol(7, 'def_stmt', 'N')) > 0;
+    this.symbols.push(new Symbol(7, 'def_stmt', 'N'));
     /* add */
-    this.symbols.push(new Symbol(8, 'array', 'N')) > 0;
+    this.symbols.push(new Symbol(8, 'array', 'N'));
     /* add */
-    this.symbols.push(new Symbol(9, 'vars', 'N')) > 0;
+    this.symbols.push(new Symbol(9, 'vars', 'N'));
     /* add */
-    this.symbols.push(new Symbol(10, 'stmts', 'N')) > 0;
+    this.symbols.push(new Symbol(10, 'stmts', 'N'));
     /* add */
-    this.symbols.push(new Symbol(11, 'stmt', 'N')) > 0;
+    this.symbols.push(new Symbol(11, 'stmt', 'N'));
     /* add */
-    this.symbols.push(new Symbol(12, 'else', 'N')) > 0;
+    this.symbols.push(new Symbol(12, 'else', 'N'));
     /* add */
-    this.symbols.push(new Symbol(13, 'cases', 'N')) > 0;
+    this.symbols.push(new Symbol(13, 'cases', 'N'));
     /* add */
-    this.symbols.push(new Symbol(14, 'case', 'N')) > 0;
+    this.symbols.push(new Symbol(14, 'case', 'N'));
     /* add */
-    this.symbols.push(new Symbol(15, 'e', 'N')) > 0;
+    this.symbols.push(new Symbol(15, 'e', 'N'));
     /* add */
-    this.symbols.push(new Symbol(16, 'E', 'N')) > 0;
+    this.symbols.push(new Symbol(16, 'E', 'N'));
     /* add */
-    this.symbols.push(new Symbol(17, 'comp', 'N')) > 0;
+    this.symbols.push(new Symbol(17, 'comp', 'N'));
     /* add */
-    this.symbols.push(new Symbol(18, 'value', 'N')) > 0;
+    this.symbols.push(new Symbol(18, 'value', 'N'));
     /* add */
-    this.symbols.push(new Symbol(19, 'items', 'N')) > 0;
+    this.symbols.push(new Symbol(19, 'items', 'N'));
     /* add */
-    this.symbols.push(new Symbol(20, 'item', 'N')) > 0;
+    this.symbols.push(new Symbol(20, 'item', 'N'));
     /* add */
-    this.symbols.push(new Symbol(21, 'factors', 'N')) > 0;
+    this.symbols.push(new Symbol(21, 'factors', 'N'));
     /* add */
-    this.symbols.push(new Symbol(22, 'factor', 'N')) > 0;
+    this.symbols.push(new Symbol(22, 'factor', 'N'));
     /* add */
-    this.symbols.push(new Symbol(23, 'call', 'N')) > 0;
+    this.symbols.push(new Symbol(23, 'call', 'N'));
     /* add */
-    this.symbols.push(new Symbol(24, 'Es', 'N')) > 0;
+    this.symbols.push(new Symbol(24, 'Es', 'N'));
     /* add */
-    this.symbols.push(new Symbol(25, "Es'", 'N')) > 0;
+    this.symbols.push(new Symbol(25, "Es'", 'N'));
     /* add */
-    this.symbols.push(new Symbol(26, 'type', 'N')) > 0;
+    this.symbols.push(new Symbol(26, 'type', 'N'));
     /* add */
-    this.symbols.push(new Symbol(27, 'const', 'N')) > 0;
+    this.symbols.push(new Symbol(27, 'const', 'N'));
     /* add */
-    this.symbols.push(new Symbol(28, 'string', 'T')) > 0;
+    this.symbols.push(new Symbol(28, 'string', 'T'));
     /* add */
-    this.symbols.push(new Symbol(29, 'id', 'T')) > 0;
+    this.symbols.push(new Symbol(29, 'id', 'T'));
     /* add */
-    this.symbols.push(new Symbol(30, '(', 'T')) > 0;
+    this.symbols.push(new Symbol(30, '(', 'T'));
     /* add */
-    this.symbols.push(new Symbol(31, ')', 'T')) > 0;
+    this.symbols.push(new Symbol(31, ')', 'T'));
     /* add */
-    this.symbols.push(new Symbol(32, 'VOID', 'T')) > 0;
+    this.symbols.push(new Symbol(32, 'VOID', 'T'));
     /* add */
-    this.symbols.push(new Symbol(33, '{', 'T')) > 0;
+    this.symbols.push(new Symbol(33, '{', 'T'));
     /* add */
-    this.symbols.push(new Symbol(34, '}', 'T')) > 0;
+    this.symbols.push(new Symbol(34, '}', 'T'));
     /* add */
-    this.symbols.push(new Symbol(35, ',', 'T')) > 0;
+    this.symbols.push(new Symbol(35, ',', 'T'));
     /* add */
-    this.symbols.push(new Symbol(36, ';', 'T')) > 0;
+    this.symbols.push(new Symbol(36, ';', 'T'));
     /* add */
-    this.symbols.push(new Symbol(37, '=', 'T')) > 0;
+    this.symbols.push(new Symbol(37, '=', 'T'));
     /* add */
-    this.symbols.push(new Symbol(38, 'IF', 'T')) > 0;
+    this.symbols.push(new Symbol(38, 'IF', 'T'));
     /* add */
-    this.symbols.push(new Symbol(39, 'SWITCH', 'T')) > 0;
+    this.symbols.push(new Symbol(39, 'SWITCH', 'T'));
     /* add */
-    this.symbols.push(new Symbol(40, 'DO', 'T')) > 0;
+    this.symbols.push(new Symbol(40, 'DO', 'T'));
     /* add */
-    this.symbols.push(new Symbol(41, 'WHILE', 'T')) > 0;
+    this.symbols.push(new Symbol(41, 'WHILE', 'T'));
     /* add */
-    this.symbols.push(new Symbol(42, 'ELSE', 'T')) > 0;
+    this.symbols.push(new Symbol(42, 'ELSE', 'T'));
     /* add */
-    this.symbols.push(new Symbol(43, 'CASE', 'T')) > 0;
+    this.symbols.push(new Symbol(43, 'CASE', 'T'));
     /* add */
-    this.symbols.push(new Symbol(44, ':', 'T')) > 0;
+    this.symbols.push(new Symbol(44, ':', 'T'));
     /* add */
-    this.symbols.push(new Symbol(45, 'DEFAULT', 'T')) > 0;
+    this.symbols.push(new Symbol(45, 'DEFAULT', 'T'));
     /* add */
-    this.symbols.push(new Symbol(46, 'FOR', 'T')) > 0;
+    this.symbols.push(new Symbol(46, 'FOR', 'T'));
     /* add */
-    this.symbols.push(new Symbol(47, '<', 'T')) > 0;
+    this.symbols.push(new Symbol(47, '<', 'T'));
     /* add */
-    this.symbols.push(new Symbol(48, '<=', 'T')) > 0;
+    this.symbols.push(new Symbol(48, '<=', 'T'));
     /* add */
-    this.symbols.push(new Symbol(49, '>', 'T')) > 0;
+    this.symbols.push(new Symbol(49, '>', 'T'));
     /* add */
-    this.symbols.push(new Symbol(50, '>=', 'T')) > 0;
+    this.symbols.push(new Symbol(50, '>=', 'T'));
     /* add */
-    this.symbols.push(new Symbol(51, '==', 'T')) > 0;
+    this.symbols.push(new Symbol(51, '==', 'T'));
     /* add */
-    this.symbols.push(new Symbol(52, '!=', 'T')) > 0;
+    this.symbols.push(new Symbol(52, '!=', 'T'));
     /* add */
-    this.symbols.push(new Symbol(53, '+', 'T')) > 0;
+    this.symbols.push(new Symbol(53, '+', 'T'));
     /* add */
-    this.symbols.push(new Symbol(54, '-', 'T')) > 0;
+    this.symbols.push(new Symbol(54, '-', 'T'));
     /* add */
-    this.symbols.push(new Symbol(55, '*', 'T')) > 0;
+    this.symbols.push(new Symbol(55, '*', 'T'));
     /* add */
-    this.symbols.push(new Symbol(56, '/', 'T')) > 0;
+    this.symbols.push(new Symbol(56, '/', 'T'));
     /* add */
-    this.symbols.push(new Symbol(57, '%', 'T')) > 0;
+    this.symbols.push(new Symbol(57, '%', 'T'));
     /* add */
-    this.symbols.push(new Symbol(58, '!', 'T')) > 0;
+    this.symbols.push(new Symbol(58, '!', 'T'));
     /* add */
-    this.symbols.push(new Symbol(59, '++', 'T')) > 0;
+    this.symbols.push(new Symbol(59, '++', 'T'));
     /* add */
-    this.symbols.push(new Symbol(60, '--', 'T')) > 0;
+    this.symbols.push(new Symbol(60, '--', 'T'));
     /* add */
-    this.symbols.push(new Symbol(61, 'CHAR', 'T')) > 0;
+    this.symbols.push(new Symbol(61, 'CHAR', 'T'));
     /* add */
-    this.symbols.push(new Symbol(62, 'INT', 'T')) > 0;
+    this.symbols.push(new Symbol(62, 'INT', 'T'));
     /* add */
-    this.symbols.push(new Symbol(63, 'LONG', 'T')) > 0;
+    this.symbols.push(new Symbol(63, 'LONG', 'T'));
     /* add */
-    this.symbols.push(new Symbol(64, 'SHORT', 'T')) > 0;
+    this.symbols.push(new Symbol(64, 'SHORT', 'T'));
     /* add */
-    this.symbols.push(new Symbol(65, 'FLOAT', 'T')) > 0;
+    this.symbols.push(new Symbol(65, 'FLOAT', 'T'));
     /* add */
-    this.symbols.push(new Symbol(66, 'DOUBLE', 'T')) > 0;
+    this.symbols.push(new Symbol(66, 'DOUBLE', 'T'));
     /* add */
-    this.symbols.push(new Symbol(67, 'int', 'T')) > 0;
+    this.symbols.push(new Symbol(67, 'int', 'T'));
     /* add */
-    this.symbols.push(new Symbol(68, 'float', 'T')) > 0;
+    this.symbols.push(new Symbol(68, 'float', 'T'));
     /* add */
-    this.symbols.push(new Symbol(69, 'double', 'T')) > 0;
+    this.symbols.push(new Symbol(69, 'double', 'T'));
     /* add */
-    this.symbols.push(new Symbol(70, 'char', 'T')) > 0;
+    this.symbols.push(new Symbol(70, 'char', 'T'));
     /* add */
-    this.symbols.push(new Symbol(71, '+=', 'T')) > 0;
+    this.symbols.push(new Symbol(71, '+=', 'T'));
     /* add */
-    this.symbols.push(new Symbol(72, '-=', 'T')) > 0;
+    this.symbols.push(new Symbol(72, '-=', 'T'));
     /* add */
-    this.symbols.push(new Symbol(73, '*=', 'T')) > 0;
+    this.symbols.push(new Symbol(73, '*=', 'T'));
     /* add */
-    this.symbols.push(new Symbol(74, '/=', 'T')) > 0;
+    this.symbols.push(new Symbol(74, '/=', 'T'));
     /* add */
-    this.symbols.push(new Symbol(75, '%=', 'T')) > 0;
+    this.symbols.push(new Symbol(75, '%=', 'T'));
     /* add */
-    this.symbols.push(new Symbol(76, 'RETURN', 'T')) > 0;
+    this.symbols.push(new Symbol(76, 'RETURN', 'T'));
     /* add */
-    this.symbols.push(new Symbol(77, 'CONTINUE', 'T')) > 0;
+    this.symbols.push(new Symbol(77, 'CONTINUE', 'T'));
     /* add */
-    this.symbols.push(new Symbol(78, 'BREAK', 'T')) > 0;
+    this.symbols.push(new Symbol(78, 'BREAK', 'T'));
     /* add */
-    this.symbols.push(new Symbol(79, '[', 'T')) > 0;
+    this.symbols.push(new Symbol(79, '[', 'T'));
     /* add */
-    this.symbols.push(new Symbol(80, ']', 'T')) > 0;
+    this.symbols.push(new Symbol(80, ']', 'T'));
     /* add */
-    this.symbols.push(new Symbol(81, '#', 'T')) > 0;
+    this.symbols.push(new Symbol(81, '#', 'T'));
   }
 
   public getFirst() {
@@ -710,7 +703,7 @@ export class GrammarCompiler {
                     let element: string = /* get */ right_symbol.first[k];
                     if (!left_symbol.has('first', element)) {
                       /* add */
-                      left_symbol.first.push(element) > 0;
+                      left_symbol.first.push(element);
                       flag = false;
                     }
                   }
@@ -728,7 +721,7 @@ export class GrammarCompiler {
   public getFollow() {
     let flag: boolean;
     /* add */
-    this.getSymbol('S').follow.push('#') > 0;
+    this.getSymbol('S').follow.push('#');
     flag = true;
     while (flag) {
       {
@@ -753,7 +746,7 @@ export class GrammarCompiler {
                     let element: string = /* get */ follow_symbol.first[k];
                     if (!right_symbol.has('follow', element)) {
                       /* add */
-                      right_symbol.follow.push(element) > 0;
+                      right_symbol.follow.push(element);
                       flag = false;
                     }
                   }
@@ -773,7 +766,7 @@ export class GrammarCompiler {
                             let element: string = /* get */ rr_symbol.first[m];
                             if (!right_symbol.has('follow', element)) {
                               /* add */
-                              right_symbol.follow.push(element) > 0;
+                              right_symbol.follow.push(element);
                               flag = false;
                             }
                           }
@@ -795,7 +788,7 @@ export class GrammarCompiler {
                       let element: string = /* get */ left_symbol.follow[k];
                       if (!right_symbol.has('follow', element)) {
                         /* add */
-                        right_symbol.follow.push(element) > 0;
+                        right_symbol.follow.push(element);
                         flag = false;
                       }
                     }
@@ -814,7 +807,7 @@ export class GrammarCompiler {
                 let element: string = /* get */ left_symbol.follow[k];
                 if (!last_symbol.has('follow', element)) {
                   /* add */
-                  last_symbol.follow.push(element) > 0;
+                  last_symbol.follow.push(element);
                   flag = false;
                 }
               }
@@ -836,7 +829,7 @@ export class GrammarCompiler {
           for (let j = 0; j < /* size */ <number>follow.length; j++) {
             {
               /* add */
-              select.push(/* get */ follow[j]) > 0;
+              select.push(/* get */ follow[j]);
             }
           }
           production.setSelect(select);
@@ -850,7 +843,7 @@ export class GrammarCompiler {
               for (let k = 0; k < /* size */ <number>first.length; k++) {
                 {
                   /* add */
-                  select.push(/* get */ first[k]) > 0;
+                  select.push(/* get */ first[k]);
                 }
               }
               if (!this.canBeBlank(right[j])) {
@@ -868,7 +861,7 @@ export class GrammarCompiler {
                     select.indexOf(<any>/* get */ follow[k]) >= 0
                   )
                 )
-                  /* add */ select.push(/* get */ follow[k]) > 0;
+                  /* add */ select.push(/* get */ follow[k]);
               }
             }
           }
@@ -893,7 +886,7 @@ export class GrammarCompiler {
             } else {
               return o1 === o2;
             }
-          })(temp.getLeft(), left)) /* add */ ret.push(temp) > 0;
+          })(temp.getLeft(), left)) /* add */ ret.push(temp);
       }
     }
     return ret;
@@ -1000,16 +993,16 @@ export class GrammarCompiler {
     let tno = 0;
     let bno = 0;
     /* add */
-    token_list.push(new Token('#', null)) > 0;
+    token_list.push(new Token('#', null));
     let stack: Symbol[] = <any>[];
     let node_stack: Node[] = <any>[];
     let pro_list: Production[] = <any>[];
     /* push */
-    stack.push(this.getSymbol('#')) > 0;
+    stack.push(this.getSymbol('#'));
     /* push */
-    stack.push(this.getSymbol('S')) > 0;
+    stack.push(this.getSymbol('S'));
     /* push */
-    node_stack.push(new Node('S', null)) > 0;
+    node_stack.push(new Node('S', null));
     let pos = 0;
     let line = 1;
     while (pos < /* size */ <number>token_list.length) {
@@ -1049,7 +1042,7 @@ export class GrammarCompiler {
                 "'",
             );
             /* add */
-            pro_list.push(err_pro) > 0;
+            pro_list.push(err_pro);
           } else {
             let err_pro: ErrorProduction = new ErrorProduction(
               -1,
@@ -1068,7 +1061,7 @@ export class GrammarCompiler {
                 "'",
             );
             /* add */
-            pro_list.push(err_pro) > 0;
+            pro_list.push(err_pro);
           }
           pos++;
           continue;
@@ -1087,7 +1080,7 @@ export class GrammarCompiler {
             '\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd',
           );
           /* add */
-          pro_list.push(err_pro) > 0;
+          pro_list.push(err_pro);
           break;
         }
         if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1164,20 +1157,24 @@ export class GrammarCompiler {
             }
           })(leftest.getName(), 'M13_2')) {
           let father: Node = left_node.getFather(); /* get */
-          /* put */ father.sons[1].attribute['name'] = /* get */ token_list[
+          /* put */
+          father.sons[1].attribute['name'] = /* get */ token_list[
             pos - 1
           ].getSource(); /* get */
-          /* put */ father.sons[1].attribute['type'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[1].attribute['type'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             /* get */ father.sons[0].attribute,
             'type',
           ); /* get */
-          /* put */ father.sons[1].attribute['length'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[1].attribute['length'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             /* get */ father.sons[0].attribute,
             'length',
           ); /* get */
-          /* put */ father.sons[1].attribute['dimension'] = '0';
+          /* put */
+          father.sons[1].attribute['dimension'] = '0';
         } else if (/* equals */ <any>((o1: any, o2: any) => {
             if (o1 && o1.equals) {
               return o1.equals(o2);
@@ -1195,12 +1192,14 @@ export class GrammarCompiler {
               'dimension',
             ),
           ); /* get */
-          /* put */ father.sons[0].attribute['name'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[0].attribute['name'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             father.attribute,
             'name',
           ); /* get */
-          /* put */ father.sons[0].attribute['type'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[0].attribute['type'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(father.attribute, 'type');
           if (
             /* get */ ((m, k) => (m[k] === undefined ? null : m[k]))(
@@ -1217,10 +1216,11 @@ export class GrammarCompiler {
               ) *
                 num +
               ''; /* get */
-          /* put */ father.sons[0].attribute['dimension'] =
+          /* put */
+          father.sons[0].attribute['dimension'] =
             father_dimension + 1 + ''; /* get */
-          /* put */ father.sons[0].attribute['arr' + father_dimension] =
-            '' + num;
+          /* put */
+          father.sons[0].attribute['arr' + father_dimension] = '' + num;
           for (let i = 0; i < father_dimension; i++) {
             {
               /* put */ /* get */
@@ -1281,11 +1281,11 @@ export class GrammarCompiler {
                       'arr' + i,
                     ),
                   ),
-                ) > 0;
+                );
               }
             }
             /* add */
-            this.ids.push(id) > 0;
+            this.ids.push(id);
           } else {
             let name: string = /* get */ ((m, k) =>
               m[k] === undefined ? null : m[k])(father.attribute, 'name');
@@ -1345,7 +1345,7 @@ export class GrammarCompiler {
             if (/* size */ <number>id.arr_list.length > 0) {
               let t: string = 't' + tno++;
               /* add */
-              this.codes.push(t + ' := ' + name + '[' + ofst + ']') > 0;
+              this.codes.push(t + ' := ' + name + '[' + ofst + ']');
               /* put */
               father.attribute['value'] = t;
               /* put */
@@ -1363,12 +1363,14 @@ export class GrammarCompiler {
             }
           })(leftest.getName(), 'M13_4')) {
           let father: Node = left_node.getFather(); /* get */
-          /* put */ father.sons[2].attribute['type'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[2].attribute['type'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             /* get */ father.sons[0].attribute,
             'type',
           ); /* get */
-          /* put */ father.sons[2].attribute['length'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[2].attribute['length'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             /* get */ father.sons[0].attribute,
             'length',
@@ -1381,20 +1383,24 @@ export class GrammarCompiler {
             }
           })(leftest.getName(), 'M17_3')) {
           let father: Node = left_node.getFather(); /* get */
-          /* put */ father.sons[0].attribute['type'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[0].attribute['type'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             father.attribute,
             'type',
           ); /* get */
-          /* put */ father.sons[0].attribute['length'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[0].attribute['length'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             father.attribute,
             'length',
           ); /* get */
-          /* put */ father.sons[0].attribute['name'] = /* get */ token_list[
+          /* put */
+          father.sons[0].attribute['name'] = /* get */ token_list[
             pos - 1
           ].getSource(); /* get */
-          /* put */ father.sons[0].attribute['dimension'] = '0';
+          /* put */
+          father.sons[0].attribute['dimension'] = '0';
         } else if (/* equals */ <any>((o1: any, o2: any) => {
             if (o1 && o1.equals) {
               return o1.equals(o2);
@@ -1403,12 +1409,14 @@ export class GrammarCompiler {
             }
           })(leftest.getName(), 'M17_5')) {
           let father: Node = left_node.getFather(); /* get */
-          /* put */ father.sons[1].attribute['type'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[1].attribute['type'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             /* get */ father.sons[0].attribute,
             'type',
           ); /* get */
-          /* put */ father.sons[1].attribute['length'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[1].attribute['length'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             /* get */ father.sons[0].attribute,
             'length',
@@ -1438,7 +1446,7 @@ export class GrammarCompiler {
             'value',
           );
           /* add */
-          this.codes.push(f1 + ' := ~' + f2) > 0;
+          this.codes.push(f1 + ' := ~' + f2);
           /* put */
           father.attribute['value'] = f1;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1456,7 +1464,7 @@ export class GrammarCompiler {
             'value',
           );
           /* add */
-          this.codes.push(f1 + ' := ' + f2 + ' + 1') > 0;
+          this.codes.push(f1 + ' := ' + f2 + ' + 1');
           /* put */
           father.attribute['value'] = f1;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1474,7 +1482,7 @@ export class GrammarCompiler {
             'value',
           );
           /* add */
-          this.codes.push(f1 + ' := ' + f2 + ' - 1') > 0;
+          this.codes.push(f1 + ' := ' + f2 + ' - 1');
           /* put */
           father.attribute['value'] = f1;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1492,7 +1500,7 @@ export class GrammarCompiler {
             'value',
           );
           /* add */
-          this.codes.push(f1 + ' := 0 - ' + f2) > 0;
+          this.codes.push(f1 + ' := 0 - ' + f2);
           /* put */
           father.attribute['value'] = f1;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1517,7 +1525,8 @@ export class GrammarCompiler {
             }
           })(leftest.getName(), 'M61_2')) {
           let father: Node = left_node.getFather(); /* get */
-          /* put */ father.sons[0].attribute['name'] = /* get */ token_list[
+          /* put */
+          father.sons[0].attribute['name'] = /* get */ token_list[
             pos - 1
           ].getSource();
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1528,12 +1537,14 @@ export class GrammarCompiler {
             }
           })(leftest.getName(), 'M63_1')) {
           let father: Node = left_node.getFather(); /* get */
-          /* put */ father.sons[0].attribute['name'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[0].attribute['name'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             father.attribute,
             'name',
           ); /* get */
-          /* put */ father.sons[0].attribute['dimension'] = '0';
+          /* put */
+          father.sons[0].attribute['dimension'] = '0';
         } else if (/* equals */ <any>((o1: any, o2: any) => {
             if (o1 && o1.equals) {
               return o1.equals(o2);
@@ -1589,12 +1600,14 @@ export class GrammarCompiler {
             }
           })(leftest.getName(), 'M52_2')) {
           let father: Node = left_node.getFather(); /* get */
-          /* put */ father.sons[1].attribute['value'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[1].attribute['value'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             /* get */ father.sons[0].attribute,
             'value',
           ); /* get */
-          /* put */ father.sons[1].attribute['val'] = /* get */ ((m, k) =>
+          /* put */
+          father.sons[1].attribute['val'] = /* get */ ((m, k) =>
             m[k] === undefined ? null : m[k])(
             /* get */ father.sons[0].attribute,
             'val',
@@ -1616,8 +1629,9 @@ export class GrammarCompiler {
           );
           let t: string = 't' + tno++;
           /* add */
-          this.codes.push(t + ' := ' + inh + ' * ' + value) > 0; /* get */
-          /* put */ father.sons[1].attribute['value'] = t;
+          this.codes.push(t + ' := ' + inh + ' * ' + value); /* get */
+          /* put */
+          father.sons[1].attribute['value'] = t;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
             if (o1 && o1.equals) {
               return o1.equals(o2);
@@ -1635,8 +1649,9 @@ export class GrammarCompiler {
           );
           let t: string = 't' + tno++;
           /* add */
-          this.codes.push(t + ' := ' + inh + ' / ' + value) > 0; /* get */
-          /* put */ father.sons[1].attribute['value'] = t;
+          this.codes.push(t + ' := ' + inh + ' / ' + value); /* get */
+          /* put */
+          father.sons[1].attribute['value'] = t;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
             if (o1 && o1.equals) {
               return o1.equals(o2);
@@ -1654,8 +1669,9 @@ export class GrammarCompiler {
           );
           let t: string = 't' + tno++;
           /* add */
-          this.codes.push(t + ' := ' + inh + ' % ' + value) > 0; /* get */
-          /* put */ father.sons[1].attribute['value'] = t;
+          this.codes.push(t + ' := ' + inh + ' % ' + value); /* get */
+          /* put */
+          father.sons[1].attribute['value'] = t;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
             if (o1 && o1.equals) {
               return o1.equals(o2);
@@ -1673,8 +1689,9 @@ export class GrammarCompiler {
           );
           let t: string = 't' + tno++;
           /* add */
-          this.codes.push(t + ' := ' + inh + ' + ' + value) > 0; /* get */
-          /* put */ father.sons[1].attribute['value'] = t;
+          this.codes.push(t + ' := ' + inh + ' + ' + value); /* get */
+          /* put */
+          father.sons[1].attribute['value'] = t;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
             if (o1 && o1.equals) {
               return o1.equals(o2);
@@ -1692,8 +1709,9 @@ export class GrammarCompiler {
           );
           let t: string = 't' + tno++;
           /* add */
-          this.codes.push(t + ' := ' + inh + ' - ' + value) > 0; /* get */
-          /* put */ father.sons[1].attribute['value'] = t;
+          this.codes.push(t + ' := ' + inh + ' - ' + value); /* get */
+          /* put */
+          father.sons[1].attribute['value'] = t;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
             if (o1 && o1.equals) {
               return o1.equals(o2);
@@ -1731,7 +1749,7 @@ export class GrammarCompiler {
           );
           let b: string = 'b' + bno++;
           /* add */
-          this.codes.push(b + ' := ' + inh + ' < ' + value) > 0;
+          this.codes.push(b + ' := ' + inh + ' < ' + value);
           /* put */
           father.attribute['value'] = b;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1751,7 +1769,7 @@ export class GrammarCompiler {
           );
           let b: string = 'b' + bno++;
           /* add */
-          this.codes.push(b + ' := ' + inh + ' <= ' + value) > 0;
+          this.codes.push(b + ' := ' + inh + ' <= ' + value);
           /* put */
           father.attribute['value'] = b;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1771,7 +1789,7 @@ export class GrammarCompiler {
           );
           let b: string = 'b' + bno++;
           /* add */
-          this.codes.push(b + ' := ' + inh + ' > ' + value) > 0;
+          this.codes.push(b + ' := ' + inh + ' > ' + value);
           /* put */
           father.attribute['value'] = b;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1791,7 +1809,7 @@ export class GrammarCompiler {
           );
           let b: string = 'b' + bno++;
           /* add */
-          this.codes.push(b + ' := ' + inh + ' >= ' + value) > 0;
+          this.codes.push(b + ' := ' + inh + ' >= ' + value);
           /* put */
           father.attribute['value'] = b;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1811,7 +1829,7 @@ export class GrammarCompiler {
           );
           let b: string = 'b' + bno++;
           /* add */
-          this.codes.push(b + ' := ' + inh + ' == ' + value) > 0;
+          this.codes.push(b + ' := ' + inh + ' == ' + value);
           /* put */
           father.attribute['value'] = b;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1831,7 +1849,7 @@ export class GrammarCompiler {
           );
           let b: string = 'b' + bno++;
           /* add */
-          this.codes.push(b + ' := ' + inh + ' != ' + value) > 0;
+          this.codes.push(b + ' := ' + inh + ' != ' + value);
           /* put */
           father.attribute['value'] = b;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1880,7 +1898,7 @@ export class GrammarCompiler {
             }
           }
           /* add */
-          this.codes.push(inh + ' := ' + value) > 0;
+          this.codes.push(inh + ' := ' + value);
           /* put */
           father.attribute['value'] = inh;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1899,7 +1917,7 @@ export class GrammarCompiler {
             'value',
           );
           /* add */
-          this.codes.push(inh + ' := ' + inh + ' + ' + value) > 0;
+          this.codes.push(inh + ' := ' + inh + ' + ' + value);
           /* put */
           father.attribute['value'] = inh;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1918,7 +1936,7 @@ export class GrammarCompiler {
             'value',
           );
           /* add */
-          this.codes.push(inh + ' := ' + inh + ' - ' + value) > 0;
+          this.codes.push(inh + ' := ' + inh + ' - ' + value);
           /* put */
           father.attribute['value'] = inh;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1937,7 +1955,7 @@ export class GrammarCompiler {
             'value',
           );
           /* add */
-          this.codes.push(inh + ' := ' + inh + ' * ' + value) > 0;
+          this.codes.push(inh + ' := ' + inh + ' * ' + value);
           /* put */
           father.attribute['value'] = inh;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1956,7 +1974,7 @@ export class GrammarCompiler {
             'value',
           );
           /* add */
-          this.codes.push(inh + ' := ' + inh + ' / ' + value) > 0;
+          this.codes.push(inh + ' := ' + inh + ' / ' + value);
           /* put */
           father.attribute['value'] = inh;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1975,7 +1993,7 @@ export class GrammarCompiler {
             'value',
           );
           /* add */
-          this.codes.push(inh + ' := ' + inh + ' % ' + value) > 0;
+          this.codes.push(inh + ' := ' + inh + ' % ' + value);
           /* put */
           father.attribute['value'] = inh;
         } else if (/* equals */ <any>((o1: any, o2: any) => {
@@ -1994,12 +2012,12 @@ export class GrammarCompiler {
           /* add */
           this.codes.push(
             'if ' + b + ' goto ' + /* size */ (<number>this.codes.length + 2),
-          ) > 0;
+          );
           /* put */
           father.attribute['backpatch'] =
             '' + /* size */ <number>this.codes.length;
           /* add */
-          this.codes.push(null) > 0;
+          this.codes.push(null);
         } else if (/* equals */ <any>((o1: any, o2: any) => {
             if (o1 && o1.equals) {
               return o1.equals(o2);
@@ -2015,7 +2033,7 @@ export class GrammarCompiler {
             ),
           );
           /* add */
-          this.codes.push(null) > 0;
+          this.codes.push(null);
           /* set */
           this.codes[backpatch] =
             'goto ' + /* size */ <number>this.codes.length;
@@ -2060,7 +2078,7 @@ export class GrammarCompiler {
             ),
           );
           /* add */
-          this.codes.push('goto ' + backto) > 0;
+          this.codes.push('goto ' + backto);
           /* set */
           this.codes[backpatch] =
             'goto ' + /* size */ <number>this.codes.length;
@@ -2115,10 +2133,10 @@ export class GrammarCompiler {
                 "'",
             );
             /* add */
-            pro_list.push(err_pro) > 0;
+            pro_list.push(err_pro);
             pos++;
             /* push */
-            stack.push(leftest) > 0;
+            stack.push(leftest);
           } else {
             let err_pro: ErrorProduction = new ErrorProduction(
               -1,
@@ -2139,7 +2157,7 @@ export class GrammarCompiler {
                 "'",
             );
             /* add */
-            pro_list.push(err_pro) > 0;
+            pro_list.push(err_pro);
           }
         } else {
           let pros: Production[] = this.getProductionsByLeft(leftest.getName());
@@ -2152,13 +2170,13 @@ export class GrammarCompiler {
                   .indexOf(<any>input_symbol.getName()) >= 0
               ) {
                 /* add */
-                pro_list.push(/* get */ pros[i]) > 0;
+                pro_list.push(/* get */ pros[i]);
                 let right: string[] = /* get */ pros[i].getRight();
                 for (let j: number = right.length - 1; j >= 0; j--) {
                   {
                     let temp: Symbol = this.getSymbol(right[j]);
                     /* push */
-                    stack.push(temp) > 0;
+                    stack.push(temp);
                     if (!temp.isTerminal()) {
                       let node: Node = new Node(temp.getName(), left_node);
                       if (
@@ -2169,7 +2187,7 @@ export class GrammarCompiler {
                       )
                         /* add */ left_node.sons.splice(0, 0, node);
                       /* push */
-                      node_stack.push(node) > 0;
+                      node_stack.push(node);
                     }
                   }
                 }
@@ -2196,7 +2214,7 @@ export class GrammarCompiler {
                   "'\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd",
               );
               /* add */
-              pro_list.push(err_pro) > 0;
+              pro_list.push(err_pro);
             } else if (leftest.has('follow', input_symbol.getName())) {
               let err_pro: ErrorProduction = new ErrorProduction(
                 -1,
@@ -2216,7 +2234,7 @@ export class GrammarCompiler {
                   "'",
               );
               /* add */
-              pro_list.push(err_pro) > 0;
+              pro_list.push(err_pro);
             } else {
               let err_pro: ErrorProduction = new ErrorProduction(
                 -1,
@@ -2237,10 +2255,10 @@ export class GrammarCompiler {
                   "'",
               );
               /* add */
-              pro_list.push(err_pro) > 0;
+              pro_list.push(err_pro);
               pos++;
               /* push */
-              stack.push(input_symbol) > 0;
+              stack.push(input_symbol);
             }
           }
         }
